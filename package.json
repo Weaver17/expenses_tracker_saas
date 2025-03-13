@@ -1,0 +1,31 @@
+{
+  "name": "expenses_tracker_saas",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 3098",
+    "build": "next build",
+    "start": "next start -p 3098",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@kinde-oss/kinde-auth-nextjs": "^2.5.3",
+    "@prisma/client": "^6.5.0",
+    "next": "15.1.4",
+    "posthog-js": "^1.230.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.4",
+    "postcss": "^8",
+    "prisma": "^6.5.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
