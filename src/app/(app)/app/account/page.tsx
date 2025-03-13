@@ -1,3 +1,4 @@
+import { prisma } from "@/lib/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -11,6 +12,16 @@ async function page() {
 
   // get user info
   const user = await getUser();
+
+  // authorization check
+  // const membership = await prisma.membership.findFirst({
+  //   where: {
+  //     userId: user.id,
+  //   },
+  // });
+  // if (!membership || membership.status !== "active") {
+  //   return redirect("/");
+  // }
 
   return (
     <div className="text-center">

@@ -12,11 +12,21 @@ async function page() {
     redirect("/api/auth/login");
   }
 
-  const user = getUser();
+  const user = await getUser();
+
+  // authorization check
+  // const membership = await prisma.membership.findFirst({
+  //   where: {
+  //     userId: user.id,
+  //   },
+  // });
+  // if (!membership || membership.status !== "active") {
+  //   return redirect("/");
+  // }
 
   const expenses = await prisma.expense.findMany({
     where: {
-      creatorId: (await user).id,
+      creatorId: user.id,
     },
   });
 
